@@ -63,6 +63,7 @@ install_sing_box() {
         "server_name": "$DOMAIN",
         "acme": {
           "domain": ["$DOMAIN"],
+          "data_directory": "/usr/local/etc/sing-box",
           "email": "admin@gmail.com",
           "provider": "letsencrypt"
         }
