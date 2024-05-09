@@ -95,7 +95,7 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 fi
 
 # 启用并启动 Sing Box
-echo "启用并启动 Sing Box"
+echo "Sing Box已成功启动 NaïveProxy安装完成"
 sudo systemctl enable sing-box || {
     echo "无法启用 Sing Box 服务！"
     exit 1
@@ -113,10 +113,10 @@ if ! sudo systemctl is-active --quiet sing-box; then
     exit 1
 fi
 
-# 输出配置信息
-echo "naive配置完成"
-echo "端口：$PORT"
-echo "域名：$DOMAIN"
-echo "密码：$PASSWORD"
-
+cat <<EOF
+{
+  "listen": "socks://127.0.0.1:1080",
+  "proxy": "https://$USERNAME:$PASSWORD@$DOMAIN:$PORT"
+}
+EOF
 
