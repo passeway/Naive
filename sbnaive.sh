@@ -3,9 +3,6 @@
 # 确保脚本在遇到错误时退出，并打印命令
 set -e
 
-# 更新升级依赖
-apt update -y  && apt upgrade -y && apt install -y curl wget sudo socat
-
 # 安装 Sing Box
 echo "正在安装 Sing Box..."
 bash <(curl -fsSL https://sing-box.app/deb-install.sh) || {
