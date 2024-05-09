@@ -19,7 +19,7 @@ USERNAME="admin"
 PASSWORD=$(openssl rand -base64 12)
 
 # 提示用户输入域名，并验证格式
-read -p "请输入域名（如 example.com）: " DOMAIN
+read -p "请输入域名: " DOMAIN
 
 # 检查域名是否为空
 if [[ -z "$DOMAIN" ]]; then
@@ -94,14 +94,8 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
     exit 1
 fi
 
-# 检查配置
-if ! /usr/bin/sing-box run -c "$CONFIG_FILE"; then
-    echo "配置验证失败！请检查配置文件内容。"
-    exit 1
-fi
-
 # 启用并启动 Sing Box
-echo "启用并启动 Sing Box..."
+echo "启用并启动 Sing Box"
 sudo systemctl enable sing-box || {
     echo "无法启用 Sing Box 服务！"
     exit 1
@@ -120,8 +114,9 @@ if ! sudo systemctl is-active --quiet sing-box; then
 fi
 
 # 输出配置信息
-echo "配置完成！"
-echo "Naive 代理正在监听端口 $PORT"
-echo "用户名：$USERNAME"
+echo "naive配置完成"
+echo "端口：$PORT"
+echo "域名：$DOMAIN"
 echo "密码：$PASSWORD"
-echo "使用域名：$DOMAIN"
+
+
