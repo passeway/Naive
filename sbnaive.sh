@@ -16,7 +16,7 @@ PORT=$(shuf -i 1025-65535 -n 1)
 
 # 用户名和随机密码
 USERNAME="admin"
-PASSWORD=$(openssl rand -base64 12)
+PASSWORD=$(openssl rand -base64 6)
 
 # 提示用户输入域名，并验证格式
 read -p "请输入域名: " DOMAIN
