@@ -67,7 +67,10 @@ systemctl restart sing-box
 ```
 systemctl status sing-box
 ```
-
+查看证书
+```
+ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
+```
 
 
 
