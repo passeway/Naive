@@ -78,10 +78,6 @@ sudo tee "$CONFIG_FILE" <<EOF > /dev/null
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "block",
-      "tag": "block"
     }
   ]
 }
