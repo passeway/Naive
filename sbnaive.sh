@@ -131,7 +131,7 @@ uninstall_sing_box() {
 echo "请选择操作："
 echo "1. 安装 NaïveProxy"
 echo "2. 卸载 NaïveProxy"
-read -p "请输入选项 (1 或 2): " CHOICE
+read -p "请输入选项 (1或2): " CHOICE
 
 case "$CHOICE" in
     1)
@@ -141,7 +141,7 @@ case "$CHOICE" in
         uninstall_sing_box
         ;;
     *)
-        echo "无效的选项，请输入 1 或 2。"
+        echo "无效的选项，请输入 1 或 2"
         exit 1
         ;;
 esac
