@@ -50,8 +50,11 @@ install_sing_box() {
       "type": "naive",
       "tag": "naive-in",
       "network": "tcp",
+      "listen": "::",
       "listen_port": $PORT,
       "tcp_fast_open": true,
+      "sniff": true,
+      "sniff_override_destination": true,
       "users": [
         {
           "username": "$USERNAME",
