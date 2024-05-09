@@ -1,28 +1,41 @@
 #!/bin/bash
 
-# 第一步：安装Sing Box
-echo "正在安装 Sing Box..."
-bash <(curl -fsSL https://sing-box.app/deb-install.sh)
+# 设置 -e 以确保脚本在遇到错误时立即退出
+set -e
 
+# 安装 Sing Box
+echo "正在安装 Sing Box..."
+bash <(curl -fsSL https://sing-box.app/deb-install.sh) || {
+    echo "Sing Box 安装失败，请检查网络连接或脚本来源！"
+    exit 1
+}
 
 # 随机生成一个 1025 到 65535 之间的端口号
 PORT=$(shuf -i 1025-65535 -n 1)
 
-# 用户名和密码
+# 用户名和随机密码
 USERNAME="admin"
 PASSWORD=$(openssl rand -base64 12)
 
-# 提示用户输入域名
-read -p "请输入域名: " DOMAIN
+# 提示用户输入域名，并验证格式
+read -p "请输入域名（如 example.com）: " DOMAIN
 
-# 检查输入的域名是否为空
-if [ -z "$DOMAIN" ]; then
+if [[ -z "$DOMAIN" ]]; then
   echo "错误：域名不能为空！"
   exit 1
 fi
 
-# 配置内容
-/etc/sing-box/config.json=$(cat <<EOF
+# 验证域名的基本格式
+if ! [[ "$DOMAIN" =~ ^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+  echo "错误：域名格式不正确！请提供有效的域名。"
+  exit 1
+fi
+
+# 配置文件位置
+CONFIG_FILE="/etc/sing-box/config.json"
+
+# 写入配置
+cat > "$CONFIG_FILE" <<EOF
 {
   "log": {
     "level": "info",
@@ -69,18 +82,31 @@ fi
   ]
 }
 EOF
-)
 
+# 检查配置
+if ! /usr/bin/sing-box run -c "$CONFIG_FILE"; then
+    echo "配置验证失败！请检查配置文件内容。"
+    exit 1
+fi
 
-# 验证配置
-/usr/bin/sing-box run -c /etc/sing-box/config.json
-
-
-# 第四步：启用并启动 Sing Box
+# 启用并启动 Sing Box
 echo "启用并启动 Sing Box..."
-systemctl enable sing-box
-systemctl start sing-box
-systemctl status sing-box
+systemctl enable sing-box || {
+    echo "无法启用 Sing Box 服务！"
+    exit 1
+}
+
+systemctl start sing-box || {
+    echo "无法启动 Sing Box 服务！"
+    exit 1
+}
+
+# 检查服务状态
+if ! systemctl is-active --quiet sing-box; then
+    echo "Sing Box 服务未成功启动！"
+    systemctl status sing-box
+    exit 1
+fi
 
 # 输出配置信息
 echo "配置完成！"
