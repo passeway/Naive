@@ -4,7 +4,7 @@
 set -e
 
 # 安装 Sing Box
-echo "正在安装 Sing Box..."
+echo "正在安装 Sing Box"
 bash <(curl -fsSL https://sing-box.app/deb-install.sh) || {
     echo "Sing Box 安装失败！请检查网络连接或安装脚本来源。"
     exit 1
@@ -90,7 +90,6 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 fi
 
 # 启用并启动 Sing Box
-echo "Sing Box已成功启动 NaïveProxy安装完成"
 sudo systemctl enable sing-box || {
     echo "无法启用 Sing Box 服务！"
     exit 1
@@ -107,7 +106,7 @@ if ! sudo systemctl is-active --quiet sing-box; then
     sudo systemctl status sing-box
     exit 1
 fi
-
+echo "Sing Box已成功启动 NaïveProxy安装完成"
 cat <<EOF
 {
   "listen": "socks://127.0.0.1:1080",
