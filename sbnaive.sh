@@ -102,7 +102,7 @@ EOF
     cat <<EOF
 {
   "listen": "socks://127.0.0.1:1080",
-  "proxy": "https://$USERNAME:$PASSWORD@$$DOMAIN:$PORT"
+  "proxy": "https://$USERNAME:$PASSWORD@$DOMAIN:$PORT"
 }
 EOF
 }
