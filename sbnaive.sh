@@ -2,7 +2,7 @@
 
 # 确保脚本在遇到错误时退出，并打印命令
 set -e
-set -x
+
 
 # 安装 Sing Box
 echo "正在安装 Sing Box..."
