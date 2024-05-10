@@ -29,8 +29,6 @@ nano /etc/sing-box/config.json
       "listen": "::",
       "listen_port": 端口,
       "tcp_fast_open": true,
-      "sniff": true,
-      "sniff_override_destination": true,
       "users": [
         {
           "username": "用户名",
@@ -47,12 +45,6 @@ nano /etc/sing-box/config.json
           "provider": "letsencrypt"
         }
       }
-    }
-  ],
-  "outbounds": [
-    {
-      "type": "direct",
-      "tag": "direct"
     }
   ]
 }
