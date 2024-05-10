@@ -27,24 +27,30 @@ nano /etc/sing-box/config.json
       "type": "naive",
       "tag": "naive-in",
       "listen": "::",
-      "listen_port": 端口,
+      "listen_port": 443,
       "tcp_fast_open": true,
       "users": [
         {
-          "username": "用户名",
-          "password": "密码"
+          "username": "your_username",
+          "password": "your_password"
         }
       ],
       "tls": {
         "enabled": true,
-        "server_name": "域名",
+        "server_name": "example.com",
         "acme": {
-          "domain": ["域名"],
+          "domain": ["example.com"],
           "data_directory": "/usr/local/etc/sing-box",
-          "email": "admin@gmail.com",
+          "email": "admin@example.com",
           "provider": "letsencrypt"
         }
       }
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct-out"
     }
   ]
 }
