@@ -3,7 +3,7 @@
 ```
 bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 ```
-修改/etc/sing-box/config
+修改/etc/sing-box/config.json
 ```
 {
   "log": {
