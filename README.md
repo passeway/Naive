@@ -1,8 +1,12 @@
-# 一键脚本
+## 预览
+
+![preview](预览.png)
+
+## 一键脚本
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/passeway/sbnaiveproxy/main/sbnaive.sh)
 ```
-# 安装
+## 安装
 下载sing-box
 ```
 bash <(curl -fsSL https://sing-box.app/deb-install.sh)
@@ -88,7 +92,7 @@ ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
 ```
 
 
-# 卸载
+## 卸载
 禁用 Sing Box
 ```
 sudo systemctl stop sing-box
