@@ -41,7 +41,7 @@ nano /etc/sing-box/config.json
         "acme": {
           "domain": ["example.com"],
           "data_directory": "/usr/local/etc/sing-box",
-          "email": "admin@example.com",
+          "email": "admin@gmail.com",
           "provider": "letsencrypt"
         }
       }
