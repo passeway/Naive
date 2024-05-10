@@ -69,6 +69,12 @@ install_sing_box() {
         }
       }
     }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct-out"
+    }
   ]
 }
 EOF
