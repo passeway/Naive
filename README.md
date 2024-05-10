@@ -61,9 +61,13 @@ nano /etc/sing-box/config.json
 ```
 cat /etc/sing-box/config.json
 ```
+检查config.json
+```
+sing-box check -c /etc/sing-box/config.json
+```
 启动config.json
 ```
-usr/bin/sing-box run -c /etc/sing-box/config.json
+sing-box run -c /etc/sing-box/config.json
 ```
 启动系统服务
 ```
