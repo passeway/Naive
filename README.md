@@ -82,11 +82,11 @@ systemctl restart sing-box
 ```
 systemctl status sing-box
 ```
-查看日志
+查看sing-box日志
 ```
 cat /var/log/singbox.log
 ```
-查看证书
+查看sing-box证书
 ```
 ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
 ```
