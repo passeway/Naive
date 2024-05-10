@@ -91,6 +91,9 @@ systemctl status sing-box
 ```
 cat /var/log/singbox.log
 ```
+```
+journalctl -u sing-box -o cat -f
+```
 查看sing-box证书
 ```
 ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
