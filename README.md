@@ -49,7 +49,7 @@ bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 ```
 启动config配置
 ```
-sing-box run /etc/sing-box/config
+sing-box run /etc/sing-box/config.json
 ```
 启动系统服务
 ```
