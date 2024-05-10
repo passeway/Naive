@@ -26,7 +26,6 @@ nano /etc/sing-box/config.json
     {
       "type": "naive",
       "tag": "naive-in",
-      "network": "tcp",
       "listen": "::",
       "listen_port": 端口,
       "tcp_fast_open": true,
