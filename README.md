@@ -77,6 +77,10 @@ systemctl enable sing-box
 ```
 systemctl start sing-box
 ```
+停止sing-box
+```
+systemctl stop sing-box
+```
 重启sing-box
 ```
 systemctl restart sing-box
