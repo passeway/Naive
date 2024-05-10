@@ -50,6 +50,7 @@ bash <(curl -fsSL https://sing-box.app/deb-install.sh)
     }
   ]
 }
+```
 查看config.json
 ```
 cat /etc/sing-box/config.json
