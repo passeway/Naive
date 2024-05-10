@@ -9,6 +9,9 @@ bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 ```
 修改/etc/sing-box/config.json
 ```
+nano /etc/sing-box/config.json
+```
+```
 {
   "log": {
     "level": "info",
@@ -75,6 +78,10 @@ systemctl restart sing-box
 ```
 systemctl status sing-box
 ```
+查看日志
+```
+cat /var/log/singbox.log
+```
 查看证书
 ```
 ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
@@ -82,7 +89,7 @@ ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
 
 
 # 卸载
-停止并禁用 Sing Box 服务
+禁用 Sing Box
 ```
 sudo systemctl stop sing-box
 sudo systemctl disable sing-box
@@ -91,13 +98,13 @@ sudo systemctl disable sing-box
 ```
 sudo apt-get remove --purge sing-box -y
 ```
-删除配置文件
+删除 Sing Box
 ```
 sudo rm -rf /etc/sing-box
 sudo rm -f /var/log/singbox.log
 sudo rm -rf /usr/local/etc/sing-box
 ```
-重新加载 systemd
+重载 systemd
 ```
 sudo systemctl daemon-reload
 ```
