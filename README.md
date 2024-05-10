@@ -1,3 +1,7 @@
+# 一键脚本
+```bash
+bash <(curl -Ls https://raw.githubusercontent.com/passeway/sbnaiveproxy/main/sbnaive.sh)
+```
 # 安装
 下载sing-box
 ```
@@ -46,10 +50,13 @@ bash <(curl -fsSL https://sing-box.app/deb-install.sh)
     }
   ]
 }
+查看config.json
 ```
-启动config配置
+cat /etc/sing-box/config.json
 ```
-sing-box run /etc/sing-box/config.json
+启动config.json
+```
+usr/bin/sing-box run -c /etc/sing-box/config.json
 ```
 启动系统服务
 ```
@@ -71,10 +78,6 @@ systemctl status sing-box
 ```
 ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
 ```
-
-
-
-
 
 
 # 卸载
