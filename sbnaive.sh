@@ -52,8 +52,6 @@ install_sing_box() {
       "listen": "::",
       "listen_port": $PORT,
       "tcp_fast_open": true,
-      "sniff": true,
-      "sniff_override_destination": true,
       "users": [
         {
           "username": "$USERNAME",
@@ -70,12 +68,6 @@ install_sing_box() {
           "provider": "letsencrypt"
         }
       }
-    }
-  ],
-  "outbounds": [
-    {
-      "type": "direct",
-      "tag": "direct"
     }
   ]
 }
@@ -112,7 +104,7 @@ EOF
 
 # 卸载 Sing Box 的函数
 uninstall_sing_box() {
-    echo "正在卸载 Sing Box..."
+    echo "正在卸载 Sing Box"
     sudo systemctl stop sing-box
     sudo systemctl disable sing-box
 
