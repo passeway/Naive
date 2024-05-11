@@ -101,16 +101,16 @@ ls /usr/local/etc/sing-box/certificates/acme-v02.api.letsencrypt.org-directory/
 
 
 ## 卸载
-禁用 Sing Box
+禁用sing-box
 ```
 sudo systemctl stop sing-box
 sudo systemctl disable sing-box
 ```
-卸载 Sing Box
+卸载sing-box
 ```
 sudo apt-get remove --purge sing-box -y
 ```
-删除 Sing Box
+删除sing-box
 ```
 sudo rm -rf /etc/sing-box
 sudo rm -f /var/log/singbox.log
