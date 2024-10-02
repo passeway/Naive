@@ -4,7 +4,7 @@
 
 ## 一键脚本
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/passeway/Naive/refs/heads/main/naive.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/passeway/Naive/main/naive.sh)
 ```
 ## 安装
 下载sing-box
