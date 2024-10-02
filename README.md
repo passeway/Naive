@@ -1,10 +1,10 @@
-## 预览
+## 终端预览
 
 ![preview](预览.png)
 
 ## 一键脚本
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/passeway/sbnaiveproxy/main/sbnaive.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/passeway/Naive/refs/heads/main/naive.sh)
 ```
 ## 安装
 下载sing-box
