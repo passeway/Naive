@@ -13,7 +13,7 @@ install_sing_box() {
 
     # 随机生成端口和密码
     PORT=$(shuf -i 1025-65535 -n 1)
-    USERNAME="admin"
+    USERNAME=$(openssl rand -base64 6)
     PASSWORD=$(openssl rand -base64 6)
 
     # 提示用户输入域名
